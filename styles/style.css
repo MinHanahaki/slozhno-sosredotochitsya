@@ -2,4 +2,119 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-color: var(--bg-color);
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  font-weight: 400;
+}
+
+.decorated-zone {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.header {
+  padding-block-start: 20px;
+  padding-block-end: 134px;
+  position: relative;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  inline-size: 70px;
+  block-size: 26px;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: none;
+  line-height: var(--main-font-size);
+  text-transform: lowercase;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none
+}
+
+.header__title {
+  color: #DB00FF;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 130px;
+  font-weight: 700;
+  margin-block-start: 273px;
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  margin: 114px 20px 0 auto;
+  display: block;
+  max-inline-size: 491px;
+  block-size: 71px;
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.header::after {
+  content: '';
+  block-size: 25px;
+  inline-size: 25px;
+  position: absolute;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  border-block-start: 1px solid;
+  border-inline-end: 1px solid;
+}
+
+.header::before {
+  content: '';
+  block-size: 25px;
+  inline-size: 25px;
+  position: absolute;
+  inset-block-end: 20px;
+  inset-inline-start: 20px;
+  border-block-end: 1px solid;
+  border-inline-start: 1px solid;
+}
+
+@media screen and (max-width: 1023px) {
+  .header {
+    padding: 192px 0 183px;
+  }
+  .header__theme-menu-list {
+    flex-direction: column; 
+    align-items: end;
+    justify-content: end;
+    padding-inline-end: 20px;
+  }
+  .header__text {
+    margin-block-start: 162px;
+    block-size: 117px;
+    max-inline-size: 364px;
+  }
+  .header__title {
+    margin-block-start: 173px;
+    line-height: 99px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 75px 0px 66px 10px;
+  }
+  .header__text {
+    margin-block-start: 55px;
+    block-size: 117px;
+    margin-inline-end: 10px;
+  }
+  .header__title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-block-start: 65px;
+    line-height: 96px;
+  }
 }
