@@ -14,7 +14,7 @@
   --accent-color: #FF0070;
 }
 
-.page.theme_dark .decorated-zone {
+.page.theme_dark {
   background-image: url('../images/cover-image-dark.png');
 }
 
@@ -50,4 +50,8 @@
 
 .page.theme_dark .header::before {
   border-color: var(--accent-color);
+}
+
+.page.theme_dark .section_info-text {
+  color: var(--text-color);
 }

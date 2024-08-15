@@ -14,7 +14,7 @@
   --accent-color: #FF8DCB;
 }
 
-.page.theme_light .decorated-zone {
+.page.theme_light {
   background-image: url('../images/cover-image-light.png');
 }
 
