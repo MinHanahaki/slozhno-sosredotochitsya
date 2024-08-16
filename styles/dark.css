@@ -16,9 +16,7 @@
   --button-color: #FF0070;
   --h1-color: #DB00FF;
   --h1-color-shadow: #FF0070;
-}
-
-.page.theme_dark {
+  
   background-image: url('../images/cover-image-dark.png');
 }
 
