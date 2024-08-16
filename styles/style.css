@@ -227,6 +227,10 @@
 
 .footer {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 768px;
 }
 
 .footer_title {
@@ -236,7 +240,6 @@
   font-weight: 700;
   text-shadow: 2px 2px 0 var(--h1-color-shadow);
   text-align: center;
-  padding: 319px 0;
 }
 
 .footer::after {
@@ -288,12 +291,18 @@
     gap: 20px;
     padding: 0 20px;
   }
+  .section_vertical {
+    grid-template-columns: 236px repeat(2, 1fr);
+  }
   .section_info_horizontal {
     grid-column: span 3;
   }
   .gallery_images {
     grid-template-columns: repeat(3, minmax(229px, 1fr));
     grid-template-rows: 192px 230px 318px;
+  }
+  .footer {
+    height: 1024px;
   }
 }
 
@@ -368,6 +377,9 @@
   }
   .gallery_images img {
     inline-size: 100%;
+  }
+  .footer {
+    height: 667px;
   }
   .footer::after {
     inset-block-start: 10px;
