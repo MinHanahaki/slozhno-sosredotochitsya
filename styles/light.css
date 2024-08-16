@@ -16,13 +16,12 @@
   --button-color: #353430;
   --h1-color: #FFC2E6;
   --h1-color-shadow: #FF0070;
-  
+
   background-image: url('../images/cover-image-light.png');
 }
 
 @media (prefers-color-scheme: light) {
-
-  :root { 
+  :root {
     --bg-color: #FFF1F7;
     --text-color: #353430;
     --accent-color: #FF8DCB;
