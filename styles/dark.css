@@ -55,3 +55,11 @@
 .page.theme_dark .section_info-text {
   color: var(--text-color);
 }
+
+.page.theme_dark .footer::after {
+  border-color: var(--accent-color);
+}
+
+.page.theme_dark .footer::before {
+  border-color: var(--accent-color);
+}
