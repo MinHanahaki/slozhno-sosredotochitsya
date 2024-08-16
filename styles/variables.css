@@ -6,4 +6,12 @@
 :root {
   --main-font: 'IBM Plex mono', sans-serif;
   --main-font-size: 18px;
+
+  --bg-color: #000028;
+  --text-color: #F1B2CE;
+  --accent-color: #FF0070;
+  --h2-color: #FF0070;
+  --button-color: #FF0070;
+  --h1-color: #DB00FF;
+  --h1-color-shadow: #FF0070;
 }

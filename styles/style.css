@@ -29,24 +29,24 @@
   inline-size: 70px;
   block-size: 26px;
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--button-color);
   border: none;
   line-height: var(--main-font-size);
   text-transform: lowercase;
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--button-color);
   pointer-events: none
 }
 
 .header__title {
-  color: #DB00FF;
+  color: var(--h1-color);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 130px;
   font-weight: 700;
   margin-block-start: 273px;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--h1-color-shadow);
 }
 
 .header__text {
@@ -97,7 +97,7 @@
 }
 
 .section_title {
-  color: var(--accent-color);
+  color: var(--h2-color);
   line-height: 23.4px;
   font-size: var(--main-font-size);
   font-weight: 700;
@@ -155,18 +155,23 @@
 
 .gallery_images {
   display: grid;
-  grid-template-columns: repeat(3, 315px);
+  grid-template-columns: repeat(3, minmax(315px, 1fr));
   grid-template-rows: 260px 315px 428px;
   gap: 20px;
 }
 
 .gallery_image-1 {
+  position: relative;
   grid-column: span 2;
   overflow: hidden;
 }
 
 .gallery_image-1 img {
-  block-size: 100%;
+  inline-size: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .gallery_image-2 {
@@ -178,7 +183,8 @@
 .gallery_image-2 img {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   block-size: 100%;
 }
 
@@ -191,12 +197,23 @@
 .gallery_image-3 img {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   block-size: 100%;
+}
+
+.gallery_image-4 {
+  position: relative;
+  overflow: hidden;
 }
 
 .gallery_image-4 img {
   inline-size: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  block-size: 100%;
 }
 
 .gallery_image-5 {
@@ -213,11 +230,11 @@
 }
 
 .footer_title {
-  color: #DB00FF;
+  color: var(--h1-color);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 130px;
   font-weight: 700;
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--h1-color-shadow);
   text-align: center;
   padding: 319px 0;
 }
@@ -274,7 +291,7 @@
     grid-column: span 3;
   }
   .gallery_images {
-    grid-template-columns: repeat(3, 229px);
+    grid-template-columns: repeat(3, minmax(229px, 1fr));
     grid-template-rows: 192px 230px 318px;
   }
 }
@@ -282,6 +299,14 @@
 @media screen and (max-width: 767px) {
   .header {
     padding: 75px 0px 66px 10px;
+  }
+  .header::after {
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+  }
+  .header::before {
+    inset-block-end: 10px;
+    inset-inline-start: 10px;
   }
   .header__text {
     margin-block-start: 55px;
@@ -294,11 +319,6 @@
     line-height: 96px;
   }
   .gallery {
-    gap: 10px;
-  }
-  .gallery_images {
-    grid-template-columns: 355px;
-    grid-template-rows: 142px 355px 237px 355px 237px;
     gap: 10px;
   }
   .main_content {
@@ -323,28 +343,40 @@
     gap: 10px;
   }
   .gallery_images {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 142px 355px 237px 355px 237px;
     gap: 10px;
   }
   .gallery_image-1 {
-    block-size: 142px;
-    inline-size: 355px;
+    grid-column: span 1;
   }
   .gallery_image-2 {
-    block-size: 355px;
-    inline-size: 355px;
+    grid-row: span 1;
+  }
+  .gallery_image-2 img {
+    block-size: auto;
   }
   .gallery_image-3 {
-    block-size: 237px;
-    inline-size: 355px;
+    grid-row: span 1;
   }
-  .gallery_image-4 {
-    block-size: 355px;
-    inline-size: 355px;
+  .gallery_image-3 img {
+    block-size: auto;
+  }
+  .gallery_image-4 img {
+    block-size: auto;
   }
   .gallery_image-5 {
-    block-size: 237px;
-    inline-size: 355px;
+    grid-column: span 1;
+  }
+  .gallery_images img {
+    inline-size: 100%;
+  }
+  .footer::after {
+    inset-block-start: 10px;
+    inset-inline-end: 10px;
+  }
+  .footer::before {
+    inset-block-end: 10px;
+    inset-inline-start: 10px;
   }
 }
