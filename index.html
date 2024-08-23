@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./fonts/fonts.css" />
     <link rel="icon" href="./images/favicon.ico" sizes="any" />
     <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/dark.css" />
     <link rel="stylesheet" href="./styles/light.css" />
@@ -43,13 +43,13 @@
           </li>
         </ul>
       </nav>
-      <div class="header__decorated-element"></div>
       <h1 class="header__title">no focus</h1>
-      <span class="header__text title-decor"
-        >Что делать, когда не можешь делать ничего<br />
+      <p class="header__text title-decor">
+        Что делать, когда не можешь делать ничего<br />
         Или почему нам так сложно сконцентрироваться, особенно когда очень
-        надо</span
-      >
+        надо
+      </p>
+      <div class="header__decorated-element"></div>
     </header>
     <main class="main_content">
       <section class="section_vertical">
@@ -90,7 +90,6 @@
       </section>
       <section class="section_horizontal">
         <h2 class="section_title">Что снижает концентрацию внимания?</h2>
-        <div class="section_hidden"></div>
         <div class="section_info section_info_horizontal">
           <h3 class="section_info-title title-decor">Многозадачность</h3>
           <p class="section_info-text">
@@ -199,21 +198,11 @@
       <section class="gallery">
         <h2 class="section_info-title title-decor">А можно в картинках?</h2>
         <div class="gallery_images">
-          <div class="gallery_image-1">
-            <img src="./images/sunset.png" alt="Закат на фоне гор, облаков, озера и птиц">
-          </div>
-          <div class="gallery_image-2">
-            <img src="./images/ice-cream.png" alt="Шарики мороженого в миске с лицами">
-          </div>
-          <div class="gallery_image-3">
-            <img src="./images/tape.png" alt="Кассета и проигрыватель на фоне">
-          </div>
-          <div class="gallery_image-4">
-            <img src="./images/books.png" alt="Стопка книг с карандашом и чашкой кофе на самом верху">
-          </div>
-          <div class="gallery_image-5">
-            <img src="./images/street.png" alt="Маленькая улица витрин и домов с пешеходным переходом и висящими кабелями">
-          </div>
+          <img loading="lazy" class="col-span-2" src="./images/sunset.png" alt="Закат на фоне гор, облаков, озера и птиц">
+          <img loading="lazy" class="row-span-2" src="./images/ice-cream.png" alt="Шарики мороженого в миске с лицами">
+          <img loading="lazy" class="row-span-2" src="./images/tape.png" alt="Кассета и проигрыватель на фоне">
+          <img loading="lazy" src="./images/books.png" alt="Стопка книг с карандашом и чашкой кофе на самом верху">
+          <img loading="lazy" class="col-span-2" src="./images/street.png" alt="Маленькая улица витрин и домов с пешеходным переходом и висящими кабелями">
         </div>
       </section>
     </main>
