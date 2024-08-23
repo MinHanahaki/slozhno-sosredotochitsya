@@ -22,16 +22,16 @@
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --bg-color: #FFF1F7;
-    --text-color: #353430;
-    --accent-color: #FF8DCB;
-    --h2-color: #353430;
-    --button-color: #353430;
-    --h1-color: #FFC2E6;
-    --h1-color-shadow: #FF0070;
-    --background-img: url('../images/cover-image-light.png');
-    --decor-color: #353430;
-    --border-color: #353430;
-  }
+    :root {
+        --bg-color: #FFF1F7;
+        --text-color: #353430;
+        --accent-color: #FF8DCB;
+        --h2-color: #353430;
+        --button-color: #353430;
+        --h1-color: #FFC2E6;
+        --h1-color-shadow: #FF0070;
+        --background-img: url('../images/cover-image-light.png');
+        --decor-color: #353430;
+        --border-color: #353430;
+    }
 }
