@@ -3,7 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--bg-color);
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-size: var(--main-font-size);
   font-weight: 400;
   background-attachment: fixed;
@@ -15,9 +15,13 @@
 
 .header {
   padding-block-start: 20px;
-  padding-block-end: 134px;
+  padding-block-end: 20px;
+  padding-inline-end: 20px;
   position: relative;
-  min-block-size: 768px;
+  min-block-size: 100vh;
+  block-size: 768px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 .header__theme-menu-list {
@@ -47,16 +51,16 @@
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 130px;
   font-weight: 700;
-  margin-block-start: 273px;
   text-shadow: 4px 4px 0 var(--h1-color-shadow);
 }
 
 .header__text {
-  margin: 114px 20px 0 auto;
   display: block;
   max-inline-size: 491px;
   font-weight: 700;
   line-height: 23.4px;
+  justify-self: end;
+  align-self: center;
 }
 
 .header::after {
@@ -144,8 +148,8 @@
   padding: 0 20px;
 }
 
-.section_hidden {
-  grid-column: 2/4;
+.section_info_horizontal {
+  grid-row-start: 2;
 }
 
 .section_info-text {
@@ -170,69 +174,18 @@
   gap: 20px;
 }
 
-.gallery_image-1 {
-  position: relative;
+.gallery_images img {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.col-span-2 {
   grid-column: span 2;
-  overflow: hidden;
 }
 
-.gallery_image-1 img {
-  inline-size: 100%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.gallery_image-2 {
-  position: relative;
+.row-span-2 {
   grid-row: span 2;
-  overflow: hidden;
-}
-
-.gallery_image-2 img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  block-size: 100%;
-}
-
-.gallery_image-3 {
-  position: relative;
-  grid-row: span 2;
-  overflow: hidden;
-}
-
-.gallery_image-3 img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  block-size: 100%;
-}
-
-.gallery_image-4 {
-  position: relative;
-  overflow: hidden;
-}
-
-.gallery_image-4 img {
-  inline-size: 100%;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  block-size: 100%;
-}
-
-.gallery_image-5 {
-  grid-column: span 2;
-  overflow: hidden;
-}
-
-.gallery_image-5 img {
-  inline-size: 100%;
 }
 
 .footer {
@@ -240,7 +193,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 768px;
+  min-block-size: 768px;
+  block-size: 100vh;
 }
 
 .footer_title {
@@ -276,27 +230,23 @@
 
 @media screen and (max-width: 1023px) {
   .header {
-    padding: 192px 0 183px;
-    min-block-size: 1024px;
+    block-size: 1024px;
   }
 
+  .header__theme-menu {
+    justify-self: end;
+    align-self: center;
+  }
   .header__theme-menu-list {
     flex-direction: column;
-    align-items: end;
-    justify-content: end;
-    padding-inline-end: 20px;
   }
   .header__text {
-    margin-block-start: 162px;
     max-inline-size: 364px;
   }
   .header__title {
-    margin-block-start: 173px;
     line-height: 99px;
   }
   .section_horizontal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
     gap: 20px;
     padding: 0 20px;
@@ -306,20 +256,21 @@
   }
   .section_info_horizontal {
     grid-column: span 3;
+    grid-row-start: auto;
   }
   .gallery_images {
     grid-template-columns: repeat(3, minmax(229px, 1fr));
     grid-template-rows: 192px 230px 318px;
   }
   .footer {
-    height: 1024px;
+    min-block-size: 1024px;
   }
 }
 
 @media screen and (max-width: 767px) {
   .header {
-    padding: 75px 0px 66px 10px;
-    min-block-size: 668px;
+    block-size: 668px;
+    padding: 10px;
   }
   .header::after {
     inset-block-start: 10px;
@@ -329,13 +280,8 @@
     inset-block-end: 10px;
     inset-inline-start: 10px;
   }
-  .header__text {
-    margin-block-start: 55px;
-    margin-inline-end: 10px;
-  }
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin-block-start: 65px;
     line-height: 96px;
   }
   .main_content {
@@ -355,9 +301,6 @@
     gap: 20px;
     padding: 0 10px;
   }
-  .section_hidden {
-    display: none;
-  }
   .gallery {
     padding: 0 10px 40px;
     gap: 10px;
@@ -367,32 +310,12 @@
     grid-template-rows: 142px 355px 237px 355px 237px;
     gap: 10px;
   }
-  .gallery_image-1 {
-    grid-column: span 1;
-  }
-  .gallery_image-2 {
-    grid-row: span 1;
-  }
-  .gallery_image-2 img {
-    block-size: auto;
-  }
-  .gallery_image-3 {
-    grid-row: span 1;
-  }
-  .gallery_image-3 img {
-    block-size: auto;
-  }
-  .gallery_image-4 img {
-    block-size: auto;
-  }
-  .gallery_image-5 {
-    grid-column: span 1;
-  }
   .gallery_images img {
-    inline-size: 100%;
+    grid-column: span 1;
+    grid-row: span 1;
   }
   .footer {
-    height: 667px;
+    min-block-size: 667px;
   }
   .footer::after {
     inset-block-start: 10px;
