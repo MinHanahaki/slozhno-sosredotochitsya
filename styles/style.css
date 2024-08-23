@@ -9,13 +9,15 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: bottom center;
+  background-image: var(--background-img);
 }
 
 .header {
   padding-block-start: 20px;
   padding-block-end: 134px;
   position: relative;
+  min-block-size: 768px;
 }
 
 .header__theme-menu-list {
@@ -53,7 +55,6 @@
   margin: 114px 20px 0 auto;
   display: block;
   max-inline-size: 491px;
-  block-size: 71px;
   font-weight: 700;
   line-height: 23.4px;
 }
@@ -65,8 +66,8 @@
   position: absolute;
   inset-block-start: 20px;
   inset-inline-end: 20px;
-  border-block-start: 1px solid;
-  border-inline-end: 1px solid;
+  border-block-start: 1px solid var(--border-color);
+  border-inline-end: 1px solid var(--border-color);
 }
 
 .header::before {
@@ -76,8 +77,13 @@
   position: absolute;
   inset-block-end: 20px;
   inset-inline-start: 20px;
-  border-block-end: 1px solid;
-  border-inline-start: 1px solid;
+  border-block-end: 1px solid var(--border-color);
+  border-inline-start: 1px solid var(--border-color);
+}
+
+.page .title-decor {
+  background-color: var(--accent-color);
+  color: var(--decor-color);
 }
 
 .main_content {
@@ -140,6 +146,10 @@
 
 .section_hidden {
   grid-column: 2/4;
+}
+
+.section_info-text {
+  color: var(--text-color);
 }
 
 .no-bold {
@@ -249,8 +259,8 @@
   position: absolute;
   inset-block-start: 20px;
   inset-inline-end: 20px;
-  border-block-start: 1px solid;
-  border-inline-end: 1px solid;
+  border-block-start: 1px solid var(--border-color);
+  border-inline-end: 1px solid var(--border-color);
 }
 
 .footer::before {
@@ -260,13 +270,14 @@
   position: absolute;
   inset-block-end: 20px;
   inset-inline-start: 20px;
-  border-block-end: 1px solid;
-  border-inline-start: 1px solid;
+  border-block-end: 1px solid var(--border-color);
+  border-inline-start: 1px solid var(--border-color);
 }
 
 @media screen and (max-width: 1023px) {
   .header {
     padding: 192px 0 183px;
+    min-block-size: 1024px;
   }
 
   .header__theme-menu-list {
@@ -277,7 +288,6 @@
   }
   .header__text {
     margin-block-start: 162px;
-    block-size: 117px;
     max-inline-size: 364px;
   }
   .header__title {
@@ -309,6 +319,7 @@
 @media screen and (max-width: 767px) {
   .header {
     padding: 75px 0px 66px 10px;
+    min-block-size: 668px;
   }
   .header::after {
     inset-block-start: 10px;
@@ -320,7 +331,6 @@
   }
   .header__text {
     margin-block-start: 55px;
-    block-size: 117px;
     margin-inline-end: 10px;
   }
   .header__title {
