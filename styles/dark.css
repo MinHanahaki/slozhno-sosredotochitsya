@@ -14,6 +14,7 @@
   --accent-color: #FF0070;
   --h2-color: #FF0070;
   --button-color: #FF0070;
+  --button-color-hover: #FF007066;
   --h1-color: #DB00FF;
   --h1-color-shadow: #FF0070;
   --background-img: url('../images/cover-image-dark.png');
@@ -40,4 +41,15 @@
   inset-block-start: 28px;
   inset-inline-end: 29px;
   border-radius: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .page.theme_dark .header__decorated-element::before {
+    inset-block-start: 10px;
+    inset-inline-end: 38px;
+  }
+  .page.theme_dark .header__decorated-element::after {
+    inset-block-start: 18px;
+    inset-inline-end: 19px;
+  }
 }
