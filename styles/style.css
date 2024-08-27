@@ -39,6 +39,7 @@
   border: none;
   line-height: var(--main-font-size);
   text-transform: lowercase;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:hover {
